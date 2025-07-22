@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - Intelligent Scan</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="dashboard">
+    <h2>🎛️ Intelligent Scan Dashboard</h2>
+
+    {% if message %}
+      <div class="message-box">{{ message }}</div>
+    {% endif %}
+
+    <div class="card-container">
+      <!-- Register Face Section -->
+      <div class="card">
+        <h3>📸 Register Face</h3>
+        <form action="/capture" method="POST">
+          <input type="text" name="user_id" placeholder="User ID" required />
+          <input type="text" name="user_name" placeholder="User Name" required />
+          <button type="submit">Capture Face</button>
+        </form>
+      </div>
+
+      <!-- Train Model Section -->
+      <div class="card">
+        <h3>🧠 Train Model</h3>
+        <form action="/train" method="POST">
+          <button type="submit">Start Training</button>
+        </form>
+      </div>
+
+      <!-- Mark Attendance Section -->
+      <div class="card">
+        <h3>🔍 Mark Attendance</h3>
+        <form action="/recognize" method="POST">
+          <button type="submit">Start Recognition</button>
+        </form>
+      </div>
+
+      <!-- View Report Section -->
+      <div class="card">
+        <h3>📄 View Attendance</h3>
+        <a href="/report" class="btn">Download Report</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

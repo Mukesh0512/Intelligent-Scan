@@ -1,0 +1,43 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Python virtual environments
+env/
+.venv/
+venv/
+ENV/
+*.egg-info/
+
+# Logs and local DBs
+*.log
+*.sqlite3
+*.db
+
+# Face data, training models, reports (keep private)
+data/face_data/
+data/reports/*.csv
+data/trained_model/*
+
+# Flask / deployment specific
+instance/
+*.bak
+*.tmp
+
+# VS Code settings
+.vscode/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Git-specific
+*.swp
+*.swo
+
+# Env variables / credentials
+.env
+.env.local
+
